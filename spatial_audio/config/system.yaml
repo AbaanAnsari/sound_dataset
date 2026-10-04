@@ -1,0 +1,40 @@
+audio:
+  sample_rate: 16000
+  channels: 4
+  bit_depth: 32
+  chunk_size: 512
+
+i2s:
+  bclk_gpio: 18
+  ws_gpio: 19
+  data_gpios:
+    - 20
+    - 22
+    - 24
+    - 26
+
+array:
+  microphones:
+    MIC1: [0.00, 0.00]
+    MIC2: [0.10, 0.00]
+    MIC3: [0.10, 0.10]
+    MIC4: [0.00, 0.10]
+
+spatial:
+  speed_of_sound: 343.0
+  gcc_phat:
+    fft_size: 1024
+    max_delay_ms: 1.0
+
+preprocessing:
+  dc_remove: true
+  highpass:
+    enabled: true
+    frequency: 80
+  lowpass:
+    enabled: true
+    frequency: 7600
+  independent_channel_normalization: false
+
+runtime:
+  mode: full
